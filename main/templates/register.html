@@ -1,0 +1,71 @@
+﻿{% extends 'withoutlogin.html' %}
+{% block title %}Register{% endblock %}
+{% block main %}
+<form class='jumbotron text-center container' method='POST' enctype='multipart/form-data' action='/register'
+    style='width: 60%;'>
+    <h1 class='display-4'>Register</h1>
+    <br>
+    {% for message in get_flashed_messages() %}
+    <div class='alert alert-warning'>
+        <button type='button' class='close' data-dismiss='alert'>&times;</button>
+        {{message}}
+    </div>
+    {% endfor %}
+    <input class='form-control mb-4' name='name' type='text' placeholder='Name' required>
+
+    <input class='form-control mb-4' name='fname' type='text' placeholder='Father' s name' required>
+
+    <input class='form-control mb-4' name='mname' type='text' placeholder='Mother' s name' required>
+
+    <div class='input-group mb-4'>
+        <div class='input-group-prepend'>
+            <span class='input-group-text' id='basic-addon1'>D.O.B.</span>
+        </div>
+        <input type='date' class='form-control' name='dob' required>
+    </div>
+
+    <input class='form-control mb-4' id='email' type='email' placeholder='E-mail' name='email' required>
+    <input type='text' name='phone' class='form-control mb-4' minlength='10' maxlength='10' placeholder='Phone number'
+        required>
+
+    <div class='input-group mb-4'>
+
+        <input type='password' id='pwd' class='form-control' placeholder='Password' name='password' minlength='8'
+            maxlength='80' required>
+        <div class='input-group-append'>
+            <div class='input-group-text'>
+                <div class='custom-control custom-switch'>
+                    <input type='checkbox' class='custom-control-input' id='showpwd' onclick='show();'>
+                    <label class='custom-control-label' for='showpwd'></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='input-group mb-4'>
+        <div class='input-group-prepend'>
+            <span class='input-group-text' id='basic-addon1'>Gender</span>
+        </div>
+        <select name='gender' class='form-control' required>
+            <option value='M'>Male</option>
+            <option value='F'>Female</option>
+        </select>
+    </div>
+
+    <div class='input-group mb-4'>
+        <div class='input-group-prepend'>
+            <span class='input-group-text'>Photo</span>
+        </div>
+        <div class='custom-file'>
+            <input type='file' class='custom-file-input' name='photo' id='customfile' required
+                onchange='fileValidation();'>
+            <label class='custom-file-label' for='customfile'>Choose file</label>
+        </div>
+
+    </div>
+    <div id='imagePreview'></div>
+    <br>
+    <input type='submit' value='Register' class='btn btn-primary'>
+    <input type='reset' value='Reset' class='btn btn-primary'>
+    </div>
+</form>
+{% endblock %}

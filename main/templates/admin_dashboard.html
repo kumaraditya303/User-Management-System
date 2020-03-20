@@ -1,0 +1,40 @@
+{% extends 'adminlayout.html' %}
+{% block title %}Admin-Dashboard{% endblock %}
+{% block main %}
+<div class='jumbotron text-center container-fluid'>
+     <table class="table table-dark table-bordered">
+          <thead>
+               <th scope="col">#</th>
+               <th scope="col">Name</th>
+               <th scope="col">Father's name</th>
+               <th scope="col">Mother's name</th>
+               <th scope="col">D.O.B</th>
+               <th scope="col">Email</th>
+               <th scope="col">Password</th>
+               <th scope="col">Phone</th>
+               <th scope="col">Gender</th>
+               <th scope="col">Last active</th>
+               <th scope="col">Photo</th>
+          </thead>
+          <tbody>
+               {% for user in users %}
+               <tr>
+                    <td scope='row'>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.fname }}</td>
+                    <td>{{ user.mname }}</td>
+                    <td>{{ user.dob }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.active }}</td>
+                    <td> <img src="/static/{{user.photo}}" width='125px' height='150px'></td>
+               </tr>
+               {% endfor %}
+          </tbody>
+
+     </table>
+</div>
+
+{% endblock %}

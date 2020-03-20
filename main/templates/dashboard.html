@@ -1,0 +1,20 @@
+{% extends 'withlogin.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block main %}
+
+<div class='jumbotron container' style="margin-top: 50px;">
+    <h1 class='display-4 text-center'> Welcome {{user.name}}</h1>
+    <p class='lead text-center'>Your registered information</p>
+    <hr class='my-4'>
+    <pre class='lead'>Father's name:     {{user.fname}}</pre>
+    <pre class='lead'>Mother's name:     {{user.mname}}</pre>
+    <pre class='lead'>Date of Birth:     {{user.dob}}</pre>
+    <pre class='lead'>Email:             {{user.email}}</pre>
+    <pre class='lead'>Password:          {{user.password}}</pre>
+    <pre class='lead'>Phone:             {{user.phone}}</pre>
+    <pre class='lead'>Gender:            {{user.gender}}</pre>
+    <img src="{{ url_for('static',filename=photo) }}" width='250px' height='300px'
+        style='position: absolute;left: 60%;top: 50%;'>
+
+</div>
+{% endblock %}

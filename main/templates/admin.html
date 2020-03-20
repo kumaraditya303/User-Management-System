@@ -1,0 +1,29 @@
+﻿{% extends 'withoutlogin.html' %}
+{% block title %}Admin{% endblock %}
+{% block main %}
+<form class='jumbotron text-center container ' style='width: 30%; margin-top: 50px;' action='/admin' method='POST'>
+    {% for message in get_flashed_messages() %}
+    <div class='alert alert-warning'>
+        <button type='button' class='close' data-dismiss='alert'>&times;</button>
+        {{message}}
+    </div>
+    {% endfor %}
+    <h1 class='display-4 text-center'>Admin</h1><br>
+
+    <input type='text' name='username' class='form-control' placeholder='Username' required autofocus><br>
+    <div class='input-group mb-4'>
+
+        <input type='password' id='pwd' class='form-control' placeholder='Password' name='password' minlength='8'
+            maxlength='80' required>
+        <div class='input-group-append'>
+            <div class='input-group-text'>
+                <div class='custom-control custom-switch'>
+                    <input type='checkbox' class='custom-control-input' id='showpwd' onclick='show();'>
+                    <label class='custom-control-label' for='showpwd'></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>
+</form>
+{% endblock %}
