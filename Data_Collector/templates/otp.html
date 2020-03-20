@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body style="background-image: url(https://bit.ly/39KPe90);">
+    <div class="login">
+    <form action="{{ url_for('verify')}}" method="POST" >
+        <h4>Enter your email address for OTP</h4><br>
+        Email: <input type="email" name="email" required>
+        <input type="submit" value="Submit">
+        <a href='/' class='st'>Go HomePage</a>
+    </form>
+    </div>
+</body>
+</html>  

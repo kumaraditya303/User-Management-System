@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body
+    style="background-image: url(https://bit.ly/39KPe90);">
+    
+    <div class="login">
+        <script>
+        window.alert('OTP was sent to you email');</script>
+    <form action="{{ url_for('validate') }}" method="POST">
+
+            <h4> One-time password has been sent to the email id. Please check the email for the verification.</h4>
+
+        Enter OTP: <input type="text" name="top" maxlength="6" minlength="5">
+
+            <input type="submit" value="Submit">
+            <a href='/' class='st'>Go HomePage</a>
+
+        </form>
+    </div>>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recorded Data</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+
+    <h1 style="text-align: center;text-decoration: underline;">Recorded data</h1>
+    <table id="customers">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Gender</th>
+
+        </thead>
+
+        {% for row in rows %}
+
+        <tr>
+            <td>{{row["id"]}}</td>
+            <td>{{row["username"]}}</td>
+            <td>{{row["password"]}}</td>
+            <td>{{row["email"]}}</td>
+            <td>{{row["phone"]}}</td>
+            <td>{{row["gender"]}}</td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+    <br>
+    <div class='sub'>
+        <a href="/" class="st">Go HomePage</a>
+    </div>
+</body>
+
+</html>

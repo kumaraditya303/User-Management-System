@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Collector</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<script>function myfunc() {
+    var x = document.getElementById("pwd");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }</script>
+<body style="background-image: url(https://bit.ly/39KPe90);">
+    <div class="login">
+        <h1>Data Collector</h1>
+        <form action="{{ url_for('result')}}" method="POST" >
+            <label for="name">Name:</label> <input type="text" name="name" id="txt" required><br>
+            <label for="email">Email:</label><input type="email" name="email" id="txt" required><br>
+            <label for="gender">Gender:</label>
+            <select name="gender" id="txt" required>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select><br>
+            <label for="phone">Phone number:</label><input type="number" name="phone" id="txt" maxlength="10"
+                minlength="10" required><br>
+            <label for="password">Password:</label><input type="password" name="password" id="pwd" minlength='8'
+                required><br>
+            <input type="checkbox" onclick="myfunc()"> Show Password
+            <div class="sub">
+                <input type="submit" name="Submit">
+                <button type="reset">Reset</button>
+                <a href="{{ url_for('otp')}}" class="st">Admin</a>
+                <a href="{{url_for('search')}}" class="st">Search</a>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
