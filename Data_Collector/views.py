@@ -62,7 +62,7 @@ def verify():
 @app.route('/validate', methods=["POST"])
 def validate():
     user_otp = request.form['top']
-
+    print(user_otp)
     if tp == int(user_otp):
         return redirect(url_for('data'))
     else:
