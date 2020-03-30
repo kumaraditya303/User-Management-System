@@ -1,5 +1,5 @@
 # Data Collector using Flask with Database
-**This prohect is Flask app which creates a server on the specified IP address and creates forms for inputs and has email notifier.**
+**This project is Flask app which creates a server on the specified IP address and creates forms for inputs and has email notifier.**
 
 ### Change these lines in Config.py file:
 
