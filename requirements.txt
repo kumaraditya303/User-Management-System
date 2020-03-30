@@ -5,3 +5,4 @@ Flask_Mail>=0.9.1
 Werkzeug>=0.14.1
 alembic>=1.4.2
 flask_migrate>=2.5.3
+flake8>=3.6.0
