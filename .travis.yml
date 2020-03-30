@@ -8,4 +8,4 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run server sh -c "python runserver"
+  - docker-compose build
