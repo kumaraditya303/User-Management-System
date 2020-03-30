@@ -7,6 +7,8 @@ WORKDIR /code
 COPY . /code
 
 RUN pip install -r /code/requirements.txt
-
+RUN pytest
 RUN adduser -D user
 USER user
+
+EXPOSE 5000

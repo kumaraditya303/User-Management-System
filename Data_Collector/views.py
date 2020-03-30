@@ -11,7 +11,7 @@ mail = Mail(app)
 
 tp = randint(000000, 999999)
 @app.route('/')
-def student():
+def home():
     return render_template('datacollect.html')
 
 
@@ -30,8 +30,7 @@ def data():
 def verify():
     email = request.form["email"]
     msg = Message('OTP', sender='siddhishanu97@gmail.com', recipients=[email])
-    msg.body = 'Your OTP for logging is ' + \
-        str(tp)+"\nTime: "+str(datetime.now())
+    msg.body = 'Your OTP for logging is ' + str(tp)+"\nTime: "+str(datetime.now())
     mail.send(msg)
     return render_template('verify.html')
 

@@ -7,13 +7,12 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
-    MAIL_USERNAME = 'REPLACE_WITH_YOUR_USERNAME'
-    MAIL_PASSWORD = 'REPLACE_WITH_YOUR_PASSWORD'
+    MAIL_USERNAME = 'siddhishanu97@gmail.com'
+    MAIL_PASSWORD = 'siddhi-12345'
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
 

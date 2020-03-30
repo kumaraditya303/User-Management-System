@@ -9,5 +9,4 @@ services:
           volumes: 
                - .:/code
           command: >
-               export FLASK_APP=runserver.py
                sh -c "python runserver.py"
