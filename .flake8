@@ -1,0 +1,5 @@
+[flake8]
+exclude =
+     migrations/
+     runserver.py
+     __init__.py
